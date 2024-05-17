@@ -1,5 +1,9 @@
+#pragma once
 #include<bits/stdc++.h>
-#include "tree-node.h"
+#include "./tree-node.h"
+#include "../traversals/dfs/inorder.h"
+#include "../traversals/dfs/preorder.h"
+#include "../traversals/dfs/postorder.h"
 
 using namespace std;
 
@@ -13,6 +17,24 @@ class Tree{
     }
 
     public:
+
+    class Traversal{
+        TreeNode* _traversalroot;
+        public:
+        Traversal(TreeNode* root){
+            this->_traversalroot = root;
+        }
+        void preorder(){
+            preOrder(this->_traversalroot);
+        }
+        void inorder(){
+            inOrder(this->_traversalroot);
+        }
+        void postorder(){
+            postOrder(this->_traversalroot);
+        }
+    };
+
     TreeNode* getRoot(){
         return this->_root;
     }

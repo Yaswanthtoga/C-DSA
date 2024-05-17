@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
-#include "trees/datastructure/tree.h"
-// #include "trees/datastructure/tree-node.h"
+#include "./trees/datastructure/tree.h"
+#include "./trees/datastructure/tree-node.h"
+
+
 
 using namespace std;
 
@@ -16,9 +18,9 @@ int main(){
     treeObject.createTree(_childNodeValues);
     TreeNode* root = treeObject.getRoot();
 
-    for(auto nodes: treeObject.getLeafNodes(root)){
-        cout<<nodes->val<<" ";
-    }
+    // Traversals
+    Tree::Traversal traversal(root);
+    traversal.preorder();
 
     return 0;
 }
