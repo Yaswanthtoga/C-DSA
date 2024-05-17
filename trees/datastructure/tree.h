@@ -4,6 +4,7 @@
 #include "../traversals/dfs/inorder.h"
 #include "../traversals/dfs/preorder.h"
 #include "../traversals/dfs/postorder.h"
+#include "../traversals/bfs/index.h"
 
 using namespace std;
 
@@ -33,6 +34,9 @@ class Tree{
         void postorder(){
             postOrder(this->_traversalroot);
         }
+        vector<vector<int>> levelordertraversal(){
+            return levelOrder(_traversalroot);
+        }
     };
 
     TreeNode* getRoot(){
@@ -47,7 +51,6 @@ class Tree{
 
         while(!_storenodes.empty()){
             if(_ind>=_size){
-                cout<<"Tree Created Successfully"<<endl;
                 break;
             }
 
